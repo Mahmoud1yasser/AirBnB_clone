@@ -59,8 +59,8 @@ class HBNBCommand(cmd.Cmd):
             "all": self.do_all,
             "show": self.do_show,
             "destroy": self.do_destroy,
-            "count": self.do_counter,
-            "update": self.do_updater
+            "count": self.do_count,
+            "update": self.do_update
         }
         match = re.search(r"\.", arg)
         if match is not None:
@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
             print(objl)
 
-    def do_counter(self, arg):
+    def do_count(self, arg):
         """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
         argl_2 = parse_1(arg)
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
                 count += 1
         print(count)
 
-    def do_updater(self, arg):
+    def do_update(self, arg):
         """Usage: update <class> <id> <attribute_name> <attribute_value> or
        <class>.update(<id>, <attribute_name>, <attribute_value>) or
        <class>.update(<id>, <dictionary>)
