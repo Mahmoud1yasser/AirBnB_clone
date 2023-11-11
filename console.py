@@ -58,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
         argdict = {
             "all": self.do_all,
             "show": self.do_show,
-            "destroy": self.do_destr,
+            "destroy": self.do_destroy,
             "count": self.do_counter,
             "update": self.do_updater
         }
@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(objdict["{}.{}".format(argl_2[0], argl_2[1])])
 
-    def do_destr(self, arg):
+    def do_destroy(self, arg):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
         argl_2 = parse_1(arg)
